@@ -1,0 +1,22 @@
+<header>
+    <!-- BACKGROUND IMAGE WITH TITLE AND LOGO -->
+    <div id="headerImage">
+        <h1>aloïs</h1>
+        <img class="logo" src="assets/img/logo.png" alt="Logo d'Aloïs Patoor">
+        <h1>patoor</h1>
+    </div>
+    <!-- DESKTOP NAV -->
+    <nav id="nav-bar" class="desktopNav" [ngClass]="{'navbar-fixed': isFixedNavbar}">
+        <ul>
+            <li><a href="#about">à propos</a></li>
+            <li><a href="#skills">compétences</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#gallery">réalisations</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+    <!-- MENU BURGER -->
+    <nav id="menu-burger" (click)="menuBurger()">
+        <a id="link" href="#"><span id="bars">{{ !navbarOpened ? 'open': '' }}</span></a>
+    </nav>
+</header>
