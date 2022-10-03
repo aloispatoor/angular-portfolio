@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.sass']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   isFixedNavbar !: boolean;
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuBurger();
-    this.onWindowScroll();
+    // this.onWindowScroll();
   }
 
   @HostBinding('class.navbar-opened') navbarOpened = false;
@@ -21,16 +21,16 @@ export class HeaderComponent implements OnInit {
     this.navbarOpened = !this.navbarOpened;
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const desktopNavbar = document.querySelector('.desktopNav');
-    const sticky = desktopNavbar?.offsetTop;
-    if(scrollY >= sticky){
-      this.isFixedNavbar = true;
-    } else {
-      this.isFixedNavbar = false;
-    }
-  }
+  // @HostListener('window:scroll', [])
+  // onWindowScroll() {
+  //   const desktopNavbar = document.querySelector('.desktopNav');
+  //   const sticky = desktopNavbar?.getBoundingClientRect().top;
+  //   if(scrollY >= sticky){
+  //     this.isFixedNavbar = true;
+  //   } else {
+  //     this.isFixedNavbar = false;
+  //   }
+  // }
 
   onContinue(): void {
     this.router.navigateByUrl('');
